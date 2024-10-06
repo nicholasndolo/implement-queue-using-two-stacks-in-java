@@ -12,4 +12,20 @@ public class StackQueue {
         stackA.push(item);
     }
 
+    public int dequeque(){
+        if(stackA.isEmpty() && stackB.isEmpty())
+            throw new IllegalStateException();
+
+        if(stackB.isEmpty())
+            while(!stackA.isEmpty())
+                stackB.push( stackA.pop());
+
+        return stackB.pop();
+
+    }
+
+    @Override
+    public String toString(){
+        return Arrays.toString(stackA.toArray());
+    }
 }
