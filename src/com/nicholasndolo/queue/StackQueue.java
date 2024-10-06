@@ -16,12 +16,16 @@ public class StackQueue {
         if(isEmpty())
             throw new IllegalStateException();
 
-        if(stackB.isEmpty())
-            while(!stackA.isEmpty())
-                stackB.push( stackA.pop());
+        moveStackAtoStackB();
 
         return stackB.pop();
 
+    }
+
+    private void moveStackAtoStackB() {
+        if(stackB.isEmpty())
+            while(!stackA.isEmpty())
+                stackB.push( stackA.pop());
     }
 
     public boolean isEmpty(){
@@ -32,9 +36,7 @@ public class StackQueue {
         if(isEmpty())
             throw new IllegalStateException();
 
-        if(stackB.isEmpty())
-            while(!stackA.isEmpty())
-                stackB.push( stackA.pop());
+        moveStackAtoStackB();
 
         return stackB.peek();
 
