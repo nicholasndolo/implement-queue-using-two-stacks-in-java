@@ -13,7 +13,7 @@ public class StackQueue {
     }
 
     public int dequeque(){
-        if(stackA.isEmpty() && stackB.isEmpty())
+        if(isEmpty())
             throw new IllegalStateException();
 
         if(stackB.isEmpty())
@@ -22,6 +22,10 @@ public class StackQueue {
 
         return stackB.pop();
 
+    }
+
+    public boolean isEmpty(){
+        return stackA.isEmpty() && stackB.isEmpty();
     }
 
     @Override
