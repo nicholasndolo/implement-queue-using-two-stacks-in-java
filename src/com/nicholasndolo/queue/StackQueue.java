@@ -28,6 +28,18 @@ public class StackQueue {
         return stackA.isEmpty() && stackB.isEmpty();
     }
 
+    public int peek(){
+        if(isEmpty())
+            throw new IllegalStateException();
+
+        if(stackB.isEmpty())
+            while(!stackA.isEmpty())
+                stackB.push( stackA.pop());
+
+        return stackB.peek();
+
+    }
+
     @Override
     public String toString(){
         return Arrays.toString(stackA.toArray());
